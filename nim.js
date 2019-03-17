@@ -47,11 +47,8 @@ class Nim {
     }
 }
 
-//  game = new Nim({name: "Stian", human: true}, {name: "Renate", human: true}, ({name}) => console.log(name), 20, 3)
+// game = new Nim({name: "Stian", human: true}, {name: "Renate", human: true}, ({name}) => console.log(name), 20, 3)
 
-//  game.take(3, ({name}, total) => console.log(name + total))
+// game.take(3, ({name}, total) => console.log(name + total))
 
-//  game.take(2, ({name}, total) => console.log(name + total))
-
-
-
+// game.take(2, ({name}, total) => console.log(name + total))

@@ -13,6 +13,7 @@
 
 <body>
 
+    <div id="settings">
     <div class="container">
 
         <h1>NIM GAME</h1>
@@ -31,21 +32,48 @@
 
         <div class="userInput">
             <h2>Ready for a game of nim?</h2>
-            <p>Enter name for player one:</p>
-            <input type="text" id="player1name">
-            <button id="submit1" onclick="firstName()">OK</button>
 
-            <p>Enter name for player two:</p>
-            <input type="text" id="player2name">
-            <button id="submit2" onclick="">OK</button>
-            <br>
-            <br>
+             <form id="form"></form>
+                <p>Enter name for player one:</p>
+                <input type="text" id="player1name" placeholder="Write in name">
 
-            <button id="start" onclick="game()">START</button>
+                <p>Enter name for player two:</p>
+                <input type="text" id="player2name" placeholder="Write in name">
+
+                <p>Enter how many Marbles you want</p>
+                <input type="number" id="total" placeholder="Write in number">
+                <br>
+                <br>
+              </form>
+            <button id="start" onclick="startGame()">START</button>
         </div>
-
+    </div>
     </div>
 
+    <div id="game" hidden>
+    <div class="gameContainer">
+
+            <h1 class="header">NIM GAME</h1>
+    
+            <div id="player1">
+                <h3 id="first"></h3>
+                <button id="btn1" onclick="update()">1</button>
+                <button id="btn2" onclick="">2</button>
+                <button id="btn3" onclick="">3</button>
+            </div>
+    
+    
+            <h2 class="score">Marbles left: <span id="totalScore"></span></h2>
+    
+            <div id="player2">
+                <h3 id="second"></h3>
+                <button id="minus1" onclick="">1</button>
+                <button id="minus2" onclick="">2</button>
+                <button id="minus3" onclick="">3</button>
+            </div>
+    
+        </div>
+    </div>
 </body>
 
 </html>
