@@ -59,6 +59,7 @@ class Nim {
             input.onclick = (e) => {
                 this.total -= i;
                 this.flipUsers()
+                this.getElementById('totalScore').innerHTML = this.total;
             }
             input.innerHTML = i+1;
             input.disabled = true;

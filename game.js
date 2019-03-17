@@ -28,7 +28,9 @@ function startGame() {
 
     document.getElementById("settings").hidden = true // after the button START is clicked, the game is no longer hidden
     document.getElementById("game").style.visibility = "visible";
-    game = new Nim(player1, player2, victory, total, 3)
+    var game = new Nim(player1, player2, victory, total, 3)
+    // check if game is actually set
+    // Do actions on buttonclicks.
 }
 
 victory = (player) => {
