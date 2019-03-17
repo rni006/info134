@@ -31,7 +31,7 @@ class Nim {
         this.maxGrab = maxGrab
     }
 
-    take(n, cb){
+    game(n, cb){
          this.total -= n
         if (this.currentPlayer === this.player1){
             this.currentPlayer = this.player2

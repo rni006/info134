@@ -1,29 +1,23 @@
 let Nim;
 
-
-// function newGame() {
-//     game = new Nim({name: "Player 1", human: true},
-//         {name: "Player 2", human: true}, victory, 36, 3)
-// }
-
-let sibrandButton = document.getElementById("sibrandButton");
-sibrandButton.addEventListener("click", function(){
-    console.log(total);
-    total -= sibrandButton.value;
-    console.log(total);
-}); 
+// find out who is the current player playing (either player 1 or 2)
+// assign buttons to the actual values
+// update total when a button is clicked
+// function for victory - when total<1 - winner "current-player-name"
+// when current player has his/her turn, other player buttons are disabled 
 
 
-
-function calculatingTotal() {
-
+window.onload = function() {
+    
+    // we need to add events to all buttons and use this code so we dont have to rewrite it
+        p1btn1 = document.getElementById("p1btn1");
+        p1btn1.addEventListener("click", function(){
+        var total = document.getElementById("total").value;
+        newTotal = total - p1btn1.value;
+        document.getElementById("totalScore").innerHTML = newTotal;
+        }); 
 }
 
-function checkWinner() {
-    if (totalScore < 1) {
-        alert("Playername");
-    }
-}
 
 function startGame() {
     var p1 = document.getElementById("player1name").value // gets the input name of the first player
@@ -41,29 +35,3 @@ function startGame() {
     game = new Nim(p1, p2, victory, total, maxGrab)
 }
 
-
-
-
-function victory({
-    name
-}) { // return winner name
-
-}
-
-// function firstName() {
-//     var x = document.getElementById("player1name").value;
-//     document.getElementById("first").innerHTML = x;
-//   }
-
-
-function updateText(total) {
-    total.innerText = Nim.total;
-}
-
-function update({name}, total) { // update who is the active player and total
-    Nim.take(firstButton.value());
-    updateText(total);
-}
-
-// tests
-// game.take(n, update) button event
