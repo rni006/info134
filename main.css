@@ -51,6 +51,10 @@ h1 {
 
 /* GAME DESIGN */
 
+#game{
+  visibility: hidden;
+}
+
 .header{
   grid-area: title;
 }
