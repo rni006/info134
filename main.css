@@ -1,18 +1,139 @@
-p {
-    margin: 10px;
+/* GENERAL DESIGN */
+body{
+  background-image:linear-gradient(#aac1ee,#fac5ec);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* height: 100v; */
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+input{
+  height:35px;
+  width: 200px;
+}
+
+h1 {
+  font-size: 47px;
+  text-transform: uppercase;
+}
+
+.container, .gameContainer{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rules{
+  width: 65%;
+  margin: 0 auto;
+}
+
+#start{
+  height: auto;
+  width: auto;
+  font-size:30px;
+  margin:0;
+  padding:6px;
+  display: initial;
+}
+
+#submit1, #submit2{ 
+  height: auto;
+  width: auto;
+  font-size:20px;
+  margin:0;
+  padding:0px;
+  display: initial;
+}
+
+/* GAME DESIGN */
+
+#game{
+  visibility: hidden;
+}
+
+.header{
+  grid-area: title;
+}
+
+.player1{
+  grid-area: player1btn;
+}
+
+.score{
+  grid-area: score;
+}
+
+.player2{
+  grid-area: player2btn;
+}
+
+button{
+  width: 100%;
+  height: 100%;
+  font-size: 45px;
+  background-color: white;
+  transition: 0.2s ease all;
+  margin:10px;
+  display: inherit;
+  padding: 25px; 
+}
+
+.player1 button:hover{
+  transform: scale(1.1); 
+}
+
+.player2 button:hover{
+  transform: scale(1.1); 
+}
+
+
+@media (orientation: landscape) {
+  .gameContainer{
+    display: grid;
+    grid-template-areas: 
+      "title title title"
+      "player1btn score player2btn";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    align-items: center;
+    justify-items: center;
   }
-  #number {
-    padding: 20px;
-    font-size: 20px;
-    border: 10px outset;
-    width: 100px;
-    text-align: center;
+}
+
+@media (orientation: portrait) {
+  .rules{
+    width: 90%;
+    margin: 0 auto;
   }
+
   button {
-    margin: 10px;
-    padding: 10px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left:5px;
+    font-size: 40px;
+    background-color: white;
+    transition: 0.2s ease all;
+
   }
-  
-  #new {
-    display: none;
+
+  .gameContainer{
+    display: grid;
+    grid-template-areas: 
+      "title"
+      "player1btn"
+      "score"
+      "player2btn";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
   }
+}

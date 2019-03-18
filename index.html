@@ -1,27 +1,68 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>NIM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="nim.js"></script>
-    <script src="game.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <script src="nim.js" defer></script>
+    <script src="game.js" defer></script>
 </head>
+
 <body>
 
-    <h2>NIM GAME</h2>
+    <div id="settings">
+        <div class="container">
 
-    <p>Nim is a mathematic game.. 
-        you can only take 1 - 3 peaces, the one who takes the last one wins
-    </p>
+            <h1>NIM GAME</h1>
 
-    <form> 
-        <input type="text" name="Player 1" placeholder="Enter name">
-        <input type="text" name="Player 2" placeholder="Enter name">
-        <input type="button" oneclick="newGame()" value ="Start game">
-    </form>
+            <div class="rules">
+                <h2>Rules:</h2>
+                <p>
+                    There is a pile of 36 marbles. Each player take turns in
+                    taking the marbles away from the marble pile. The only rule is that
+                    each player must take at least one marble on their turn,
+                    but they may take more. The possible total amout a player can take
+                    in one turn is three marbles. The winner of the game, is the player
+                    who takes the last marbles.
+                </p>
+            </div>
 
+            <div class="userInput">
+                <h2>Ready for a game of nim?</h2>
+
+                <form id="form">
+                    <label for="playerOne">Enter name for player one:</label>
+                    <input type="text" id="playerOne" name="playerOne" placeholder="Write in name">
+
+                    <label for="playerTwo">Enter name for player two:</label>
+                    <input type="text" id="playerTwo" name="playerTwo" placeholder="Write in name">
+
+                    <label for="marbleCount">Enter how many Marbles you want</label>
+                    <input type="number" id="marbleCount" placeholder="Write in number">
+                </form>
+                <button id="start" onclick="startGame()">START</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="game">
+        <div class="gameContainer">
+
+            <h1 class="header">NIM GAME</h1>
+
+            <div id="player1">
+            </div>
+
+            <h2 class="score">Marbles left: <span id="totalScore"></span></h2>
+
+            <div id="player2">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
