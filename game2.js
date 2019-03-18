@@ -10,7 +10,7 @@ function NewGame(){
 
 function begin(){
   var playname1=nim.player1=document.getElementById("p1").value;
-  var playname2=nim.player1=document.getElementById("p2").value;
+  var playname2=nim.player2=document.getElementById("p2").value;
   var condition1= playname1==playname2;
   var condition2= playname1=="";
   var condition3= playname2=="";
@@ -52,7 +52,7 @@ function player1(x){
       else if (number==0) {
         document.getElementById("number").innerHTML=number;
         document.getElementById("move").innerHTML=nim.victory;
-        document.getElementById("new").style.display="block";
+        document.getElementById("new").style.visability="visable";
       }
     }
     else{  alert("this is the turn to "+ nim.player2+"." ); }
@@ -69,7 +69,7 @@ function player2(x){
       else if (number==0) {
         document.getElementById("number").innerHTML=number;
         document.getElementById("move").innerHTML=nim.victory;
-        document.getElementById("new").style.display="block";
+        document.getElementById("new").style.visability="visable";
       }
     }
     else{alert("This is the turn to "+nim.player1+".") ; }

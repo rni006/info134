@@ -2,6 +2,6 @@ var nim ={
   total:24,
   player1:1,
   player2:2,
-  victory:"win",
+  victory:"wins",
   maxGrab:1,
 }

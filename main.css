@@ -1,10 +1,13 @@
 /* GENERAL DESIGN */
+html{
+  height:100%;
+}
+
 body{
   background-image:linear-gradient(#aac1ee,#fac5ec);
   margin: 0;
   padding: 0;
   width: 100%;
-  /* height: 100v; */
   font-family: 'Titillium Web', sans-serif;
   font-weight: 400;
   margin-bottom: 1em;
@@ -31,7 +34,7 @@ h1 {
   margin: 0 auto;
 }
 
-#start{
+#\#start{
   height: auto;
   width: auto;
   font-size:30px;
@@ -51,12 +54,15 @@ h1 {
 
 /* GAME DESIGN */
 
-#game{
+#new{
+  grid-area: newButton;
   visibility: hidden;
 }
 
 .header{
   grid-area: title;
+  margin: 0;
+  padding: 0;
 }
 
 .player1{
@@ -96,9 +102,10 @@ button{
     display: grid;
     grid-template-areas: 
       "title title title"
-      "player1btn score player2btn";
+      "player1btn score player2btn"
+      ".. newButton ...";
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 0fr 3fr;
     align-items: center;
     justify-items: center;
   }
@@ -130,7 +137,8 @@ button{
       "title"
       "player1btn"
       "score"
-      "player2btn";
+      "player2btn"
+      "newButton";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     align-items: center;
