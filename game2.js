@@ -65,7 +65,7 @@ function player2(x){
       if (number>0){
         document.getElementById("number").innerHTML=number;
         document.getElementById("player").innerHTML=nim.player1;
-        document.getElementById("diff").innerHTML=1
+        document.getElementById("diff").innerHTML=1;
       }
       else if (number==0) {
         document.getElementById("number").innerHTML=number;
