@@ -52,10 +52,11 @@ function player1(x){
       else if (number==0) {
         document.getElementById("number").innerHTML=number;
         document.getElementById("move").innerHTML=nim.victory;
-        document.getElementById("new").style.visability="visable";
+        document.getElementById("new").style.display="inline";
       }
     }
-    else{  alert("this is the turn to "+ nim.player2+"." ); }
+
+    else if(number<0&&door1==false){  alert("this is the turn to "+ nim.player2+"." ); }
 }
 function player2(x){
     var door2= document.getElementById("diff").innerHTML==2;
@@ -69,8 +70,8 @@ function player2(x){
       else if (number==0) {
         document.getElementById("number").innerHTML=number;
         document.getElementById("move").innerHTML=nim.victory;
-        document.getElementById("new").style.visability="visable";
+        document.getElementById("new").style.display="inline";
       }
     }
-    else{alert("This is the turn to "+nim.player1+".") ; }
+    else if (number<0&&door2==false) {alert("This is the turn to "+nim.player1+".") ; }
 }

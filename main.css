@@ -43,7 +43,7 @@ h1 {
   display: initial;
 }
 
-#submit1, #submit2{ 
+#submit1, #submit2{
   height: auto;
   width: auto;
   font-size:20px;
@@ -56,7 +56,7 @@ h1 {
 
 #new{
   grid-area: newButton;
-  visibility: hidden;
+  display: none;
 }
 
 .header{
@@ -85,22 +85,22 @@ button{
   transition: 0.2s ease all;
   margin:10px;
   display: inherit;
-  padding: 25px; 
+  padding: 25px;
 }
 
 .player1 button:hover{
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .player2 button:hover{
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 
 @media (orientation: landscape) {
   .gameContainer{
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
       "title title title"
       "player1btn score player2btn"
       ".. newButton ...";
@@ -133,7 +133,7 @@ button{
 
   .gameContainer{
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
       "title"
       "player1btn"
       "score"
