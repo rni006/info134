@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <script src="main2.js"></script>
+    <style>
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    .center{
+      width:500px;
+      margin:10px auto;
+    }
+    .oversikt table,th,td {
+      border : 1px solid black;
+      border-collapse: collapse;
+    }
+    .oversikt td{
+      width:160px;
+    }
+    .oversikt .head .number,.name,.total{
+      float:left;
+      border: 1px solid black;
+      width:160px;
+      height:20px;
+      text-align: center;;
+      border-collapse: collapse;
+    }
+    .oversikt .head .number,.name{
+      border-right:none;
+    }
+
+    .oversikt .table{
+      clear:both;
+      height:200px;
+      overflow:scroll;
+
+    }
+    .oversikt .search{
+      margin: 10px;
+    }
+    .oversikt .search .submitt{
+      float:right;
+      width:60px;
+      height:30px;
+    }
+    </style>
+</head>
+<body>
+
+<div class="introduction center">
+    <p>Introduction: <br>
+      1. Users can find the kommunenummer they are interested in <br>
+      2. Users can look for histories of development of kommune during years <br>
+      3. Users can compare two development of kommunes </p>
+</div>
+
+<div class="oversikt center">
+    <p> Find the number of commune </p>
+    <div class="head">
+      <div class="number">kommunenummer</div>
+      <div class="name">kommunename</div>
+      <div class="total">Total population</div>
+    </div>
+
+    <div class="table">
+    <table id="oversikt"></table>
+    </div>
+
+    <div class="search">
+      <form>
+      Kommunenummer: <input type="text" id="com_number"> <br>
+      Year from
+      <select name="year-from">
+      <option></option>
+      <option>2018</option>
+      <option>2017</option>
+      <option>2016</option>
+      <option>2015</option>
+      <option>2014</option>
+      <option>2013</option>
+      <option>2012</option>
+      <option>2011</option>
+      <option>2010</option>
+      <option>2009</option>
+      <option>2008</option>
+      <option>2007</option>
+       </select>
+      to <select name="year-to">
+        <option></option>
+        <option>2018</option>
+        <option>2017</option>s
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+        <option>2009</option>
+        <option>2008</option>
+        <option>2007</option>
+         <select> <br>
+      compare with <input>  <br>
+      <button class="submitt" onclick="myfunction()">submitt<button>
+      </form>
+
+      <p id="demo"> try </p>
+
+    </div>
+</div>
+
+<!-- Sammenligne med andre kommuner -->
+
+<footer>
+
+</footer>
+
+</body>
+</html>
