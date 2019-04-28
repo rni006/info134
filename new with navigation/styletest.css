@@ -11,18 +11,15 @@ body{
     margin:0px;
     padding:0px;
   }
-  .center{
-    width:500px;
-    margin:10px auto;
-  }
-  .oversikt table,th,td {
+
+table,th,td {
     border : 1px solid black;
     border-collapse: collapse;
   }
-  .oversikt td{
+ td{
     width:160px;
   }
-  .oversikt .head .number,.name,.total{
+.head .number,.name,.total{
     float:left;
     border: 1px solid black;
     width:160px;
@@ -30,24 +27,27 @@ body{
     text-align: center;;
     border-collapse: collapse;
   }
-  .oversikt .head .number,.name{
+.head .number,.name{
     border-right:none;
   }
 
-  .oversikt .table{
+.table{
     clear:both;
     height:200px;
     overflow:scroll;
+}
 
-  }
-  .oversikt .search{
-    margin: 10px;
-  }
-  .oversikt .search .submitt{
-    float:right;
-    width:60px;
-    height:30px;
-  }
+#details{
+    margin-top: 4em;
+}
+
+#overview{
+    margin-top: 4em;
+}
+
+#compare{
+    margin-top: 4em;
+}
 
 /* Navigation and logo */
 
@@ -125,12 +125,12 @@ nav ul li a {
     transform: translateY(-6px) rotate(90deg);
 }
 
-#nav:checked~.nav-wrapper {
+#nav:checked~.nav {
     z-index: 9990;
     opacity: 1;
 }
 
-#nav:checked~.nav-wrapper ul li a {
+#nav:checked~.nav ul li a {
     opacity: 1;
     transform: translateX(0);
 }
@@ -160,7 +160,7 @@ nav ul li a {
         left: 0;
     }
 
-    .nav-wrapper {
+    .nav {
         position: fixed;
         top: 0;
         left: 0;
@@ -172,14 +172,14 @@ nav ul li a {
         transition: all 0.2s ease;
     }
 
-    .nav-wrapper ul {
+    .nav ul {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         width: 100%;
     }
 
-    .nav-wrapper ul li {
+    .nav ul li {
         display: block;
         float: none;
         width: 100%;
@@ -187,27 +187,27 @@ nav ul li a {
         margin-bottom: 1em;
     }
 
-    .nav-wrapper ul li:nth-child(1) a {
+    .nav ul li:nth-child(1) a {
         transition-delay: 0.2s;
     }
 
-    .nav-wrapper ul li:nth-child(2) a {
+    .nav ul li:nth-child(2) a {
         transition-delay: 0.3s;
     }
 
-    .nav-wrapper ul li:nth-child(3) a {
+    .nav ul li:nth-child(3) a {
         transition-delay: 0.4s;
     }
 
-    .nav-wrapper ul li:nth-child(4) a {
+    .nav ul li:nth-child(4) a {
         transition-delay: 0.5s;
     }
 
-    .nav-wrapper ul li:not(:first-child) {
+    .nav ul li:not(:first-child) {
         margin-left: 0;
     }
 
-    .nav-wrapper ul li a {
+    .nav ul li a {
         padding: 10px 24px;
         opacity: 0;
         color: #000;

@@ -6,7 +6,7 @@
     <title>INFO134</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
+    <script src="main_2.js"></script>
     <script srrc="nav.js"></script>
 </head>
 <body>
@@ -27,10 +27,10 @@
               <div class="nav-wrapper">
        
                     <ul>
-                          <li><a href="#" onclick="visable('introduction')">Introduction</a></li>
-                          <li><a href="#" onclick="visable('details')">Details</a></li>
-                          <li><a href="#" onclick="visable('overview')">Overview</a></li>
-                          <li><a href="#" onclick="visable('compare')">Compare</a></li>
+                          <li><a href="#" onclick="toggleVisibility('introduction')">Introduction</a></li>
+                          <li><a href="#" onclick="toggleVisibility('overview')">Overview</a></li>
+                          <li><a href="#" onclick="toggleVisibility('details')">Details</a></li>
+                          <li><a href="#" onclick="toggleVisibility('compare')">Compare</a></li>
                     </ul>
         
               </div>
@@ -40,28 +40,80 @@
 </header>
 
     
-
 <div id="introduction">
-    <h1>Introduction</h1>
-    <p>hvordan denne programmen brukes</p>
+    <div class="introduksjon center">
+        <h1>Introduction:</h1>
+        <p>
+            1. Users can find the kommunenummer they are interested in <br>
+            2. Users can look for histories of development of kommune during years <br>
+            3. Users can compare two development of kommunes 
+        </p>
+    </div>
 </div>
-<div id="overview"></div>
-<h1>Overview</h1>
-<!-- Kommunenummer, kommune navn, siste måling av befolkning -->
-<div id="details"></div>
-<h1>Details</h1>
+
+<div id="overview" style="display: none;">
+    <div class="oversikt center">
+        <h1>Overview</h1>
+        <p> Find the number of commune </p>
+        <div class="head">
+        <div class="number">kommunenummer</div>
+        <div class="name">kommunename</div>
+        <div class="total">Total population</div>
+        </div>
+
+        <div class="table">
+        <table id="oversikt"></table>
+        </div>
+    </div>
+</div>
+
+<div id="details" style="display: none;">
+    <div class="detaljer center"></div>
+    <div class="search center">
+    <h1>Details</h1>
     <form>
-        <input type="text", id="kommune-nummer", placeholder="Skriv inn kommune nummer">
-        <input type="text", id="kommune-navn", placeholder="Skriv inn kommune navn">
-        <input type="text", id="year-from", placeholder="">
-        <input type="text", id="year-to", placeholder="">
-        <button type="submit" id="submit" onclick="startProgram()">Submit</button>
+    Kommunenummer: <input type="text" id="com_number"> <br>
+    Year from
+    <select name="year-from">
+    <option></option>
+    <option>2018</option>
+    <option>2017</option>
+    <option>2016</option>
+    <option>2015</option>
+    <option>2014</option>
+    <option>2013</option>
+    <option>2012</option>
+    <option>2011</option>
+    <option>2010</option>
+    <option>2009</option>
+    <option>2008</option>
+    <option>2007</option>
+     </select>
+    to <select name="year-to">
+      <option></option>
+      <option>2018</option>
+      <option>2017</option>s
+      <option>2016</option>
+      <option>2015</option>
+      <option>2014</option>
+      <option>2013</option>
+      <option>2012</option>
+      <option>2011</option>
+      <option>2010</option>
+      <option>2009</option>
+      <option>2008</option>
+      <option>2007</option> <br>
+        </select>
+    </div>
+</div>
+
+<div id="compare" style="display: none;">
+<div class="compare center">
+    <h1>Compare with other kommuner</h1>
+    compare with <input>  <br>
+    <button class="submitt" onclick="myfunction()">submitt<button>
     </form>
-<div id="compare">
-    <h1>Compare</h1>
-    <form>
-        <input type="text", id="sammenligne", placeholder="Sriv in kommune nummber">
-    </form>
+</div>
 </div>
 <!-- Sammenligne med andre kommuner -->
 
