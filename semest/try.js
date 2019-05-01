@@ -67,14 +67,17 @@ var befolkning_d = new Database(befolkning,function (){
   var id =befolkning_d.getIds();
   var name=befolkning_d.getNames();
   var txt="";
-  for(var i in info_dic){
-    var total= info_dic[i]["men"]["2018"]+info_dic[i]["women"]["2018"];
+  for(var i =0; i<id.length; i++ ){
+    var variable=id[i];
+    var total= info_dic[variable]["men"]["2018"]+info_dic[variable]["women"]["2018"];
     txt = txt+"<tr><td>"+id[i] + "</td><td>"
     +name[i]+"</td><td>"+total+"</td></tr>";
   }
+  //console(info_dic["0101"][men]["2018"])
   document.getElementById("oversikt").innerHTML=txt;
 })
-//befolkning_d.load()
+
+befolkning_d.load()
 var sysselsatte_d = new Database(sysselsatte,function(){
   var dic=sysselsatte_d.employment();
 })
