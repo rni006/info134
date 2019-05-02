@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" media="screen" href="styletest.css">
-    <script src="test.js"></script>
+    <script src="nav.js"></script>
     <script src="try.js"></script>
 </head>
 
@@ -14,9 +14,6 @@
               <i></i>
               <i></i>
         </label>
-        <div class="logo">
-              <a href="#">FOLK</a>
-        </div>
 
 <div class="nav">
     <ul>
@@ -28,74 +25,99 @@
 </div>
 </nav>
 
-    <div id="introduction">
-        <div id="demo">demo</div>
-        <h1>Introduction:</h1>
-        <p>
-            1. Users can find the kommunenummer they are interested in <br>
-            2. Users can look for histories of development of kommune during years <br>
-            3. Users can compare two development of kommunes
-        </p>
-    </div>
+<div class="container">
+        <div id="introduction">
+                <h1>Folk</h1>
+                <p class="mid">På denne siden kan du finne mer informasjon on Norges befolking.</p>
+                <p class="mid">På siden "Oversikt" finner du alle kommuner med kommunenummer og siste målingen
+                    av total befolkningen.</p>
+                <p class="mid">På siden "Detaljer", du kan selv velge en kommune, som du har lyst
+                    å vite mer om. Der finner du også inforamsjon om sist målte statistikk for
+                    sysselsetting og høyere utdanning. </p>
+                <p class="mid">"Sammenligning" gir deg mulighet for å sammenligne 2 kommuner 
+                    med hverandre. Du får sett historisk data for utviklingen av sysselsetting for 
+                    begge kjønn i begge kommunene.
+                </p>
+        
+                <p class="mid">Denne siden benytter data tatt fra <a href="https://www.ssb.no/">Statistisk sentralbyrå</a></p>
+                <ul id="used-data">
+                    <p class="mid">De dataene som blir brukt i oppgaven finner du her:</p>
+                    <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning</a></li>
+                    <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsetting</a></li>
+                    <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdanning</a></li>
+                </ul>
+        
+                <p class="mid" id="warning">OBS: Data kan inneholde feil</p>
+            </div>
+        
+            <div id="overview" style="display: none;">
+                <h1>Oversikt</h1>
+                <p>Her får du oversikt over alle kommunene, kommunenummer og siste måling av total befolkning</p>
+        
+                <div class="head">
+                    <div class="number">Kommunenummer</div>
+                    <div class="name">Kommunenavn</div>
+                    <div class="total">Befolkning</div>
+                </div>
+        
+                <div class="table">
+                <table id="oversikt"></table>
+                </div>
+            </div>
+        
+            <div id="details" style="display: none;">
+                <h1>Detaljer</h1>
+                <form>
+                        Kommunenummer: <input type="text" id="com_number"> <br>
+                        <button class="submitt" onclick="myfunction()">submitt</button>
+                        <!-- Year from
+                        <select name="year-from">
+                        <option></option>
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011</option>
+                        <option>2010</option>
+                        <option>2009</option>
+                        <option>2008</option>
+                        <option>2007</option>
+                         </select>
+                        to <select name="year-to">
+                          <option></option>
+                          <option>2018</option>
+                          <option>2017</option>s
+                          <option>2016</option>
+                          <option>2015</option>
+                          <option>2014</option>
+                          <option>2013</option>
+                          <option>2012</option>
+                          <option>2011</option>
+                          <option>2010</option>
+                          <option>2009</option>
+                          <option>2008</option>
+                          <option>2007</option> <br>
+                            </select>
+                </form> -->
+            </div>
+        
+            <div id="compare" style="display: none;">
+                <h1>Sammenligning</h1>
+                <p>Sammenlign med en annen kommune</p>
+                <input type="text" id="com_number">
+                <input type="text" id="com_number2">
+        
+                <button class="submitt" onclick="myfunction()">submitt</button>
+                
+            </div>
+        
 
-    <div id="overview" style="display: none;">
-        <h1>Overview</h1>
-        <p> Find the number of commune </p>
-        <div class="head">
-        <div class="number">kommunenummer</div>
-        <div class="name">kommunename</div>
-        <div class="total">Total population</div>
         </div>
-
-        <div class="table">
-        <table id="oversikt"> </table>
-        </div>
-    </div>
-
-    <div id="details" style="display: none;">
-        <h1>Details</h1>
-        <form>
-                Kommunenummer: <input type="text" id="com_number"> <br>
-                Year from
-                <select name="year-from">
-                <option></option>
-                <option>2018</option>
-                <option>2017</option>
-                <option>2016</option>
-                <option>2015</option>
-                <option>2014</option>
-                <option>2013</option>
-                <option>2012</option>
-                <option>2011</option>
-                <option>2010</option>
-                <option>2009</option>
-                <option>2008</option>
-                <option>2007</option>
-                 </select>
-                to <select name="year-to">
-                  <option></option>
-                  <option>2018</option>
-                  <option>2017</option>s
-                  <option>2016</option>
-                  <option>2015</option>
-                  <option>2014</option>
-                  <option>2013</option>
-                  <option>2012</option>
-                  <option>2011</option>
-                  <option>2010</option>
-                  <option>2009</option>
-                  <option>2008</option>
-                  <option>2007</option> <br>
-                  </select>
-        </form>
-    </div>
-
-    <div id="compare" style="display: none;">
-        <h1>Compare with other kommuner</h1>
-        compare with <input>  <br>
-        <button class="submitt" onclick="myfunction()">submitt<button>
-        </form>
-    </div>
-
+        
+<footer>Dette er en oppgavebesvarelse i emnet INFO134</footer>
 </body>
+
 </html>
