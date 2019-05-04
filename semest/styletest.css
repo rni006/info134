@@ -8,19 +8,25 @@ body{
 }
 
 *{
-    margin:0px;
     padding:0px;
-  }
+}
+
+p{
+    text-align: center;
+}
 
 table,th,td {
     border : 1px solid black;
     border-collapse: collapse;
+    text-align: center;
   }
  td{
     width:160px;
+    text-align: center;
   }
+
 .head .number,.name,.total{
-    float:left;
+    display: table-cell;
     border: 1px solid black;
     width:160px;
     height:20px;
@@ -29,12 +35,17 @@ table,th,td {
   }
 .head .number,.name{
     border-right:none;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 .table{
     clear:both;
-    height:600px;
+    height:363px;
     overflow:scroll;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1{
