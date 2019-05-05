@@ -88,12 +88,22 @@ sysselsatte_d.load()
 var utdanning_d = new Database(utdanning_d)
 
 function detailFunction(){
-  var komnum = sysselsatte_d.getIds();
-  if(document.getElementById("kom_num") === komnum){
-    return true
-  }else{
-    alert("Kommune med denne kommunenumer finnes ikke, venligst - prøv igjen.")
+  var komnum = befolkning_d.getIds();
+  var komumID = document.getElementById("kom_numID").value;
+  var moreInfo = befolkning_d.getInfo();
+
+  if(komnum.includes(komumID)){
+    alert('code is valid');
+    // go thorugh all the information of the array, compare the kommune nummer to the actual kommune
+    // and print out the information in a form of a table
+    for(var i =0; i<befolkning_d.getInfo().length; i++ ){
+      
+    }
+    
+  }else {
+    alert('Kommunenummer eksisterer ikke, vennligst - prøv igjen')
   }
+  
 }
 
 
