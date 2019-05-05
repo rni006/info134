@@ -78,14 +78,23 @@ var befolkning_d = new Database(befolkning,function (){
 })
 
 befolkning_d.load()
+
+
 var sysselsatte_d = new Database(sysselsatte,function(){
   var dic=sysselsatte_d.employment();
 })
+
 sysselsatte_d.load()
-//var utdanning_d = new Database(utdanning_d)
+var utdanning_d = new Database(utdanning_d)
 
-
-
+function detailFunction(){
+  var komnum = sysselsatte_d.getIds();
+  if(document.getElementById("kom_num") === komnum){
+    return true
+  }else{
+    alert("Kommune med denne kommunenumer finnes ikke, venligst - prøv igjen.")
+  }
+}
 
 
 

@@ -17,10 +17,10 @@
 
 <div class="nav">
     <ul>
-    <li><a href="#" onclick="toggleVisibility('introduction');">Introduction</a></li>
-    <li onclick="befolkning_d.load()"> <a href="#" onclick="toggleVisibility('overview');">Overview</a></li>
-    <li><a href="#" onclick="toggleVisibility('details');">Details</a></li>
-    <li><a href="#" onclick="toggleVisibility('compare');">Compare</a></li>
+    <li><a href="#" onclick="toggleVisibility('introduction');">Introduksjon</a></li>
+    <li onclick="befolkning_d.load()"> <a href="#" onclick="toggleVisibility('overview');">Oversikt</a></li>
+    <li><a href="#" onclick="toggleVisibility('details');">Detaljer</a></li>
+    <li><a href="#" onclick="toggleVisibility('compare');">Sammenligning</a></li>
     </ul>
 </div>
 </nav>
@@ -67,9 +67,9 @@
         
             <div id="details" style="display: none;">
                 <h1>Detaljer</h1>
-                <form>
-                        Kommunenummer: <input type="text" id="com_number"> <br>
-                        <button class="submitt" onclick="myfunction()">submitt</button>
+                <form >
+                        Kommunenummer: <input type="text" id="kom_num"> <br>
+                        <button class="submitt" onclick="detailFunction()">OK</button>
                         <!-- Year from
                         <select name="year-from">
                         <option></option>

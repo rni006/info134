@@ -118,6 +118,7 @@ table,th,td {
 #details{
     display: none;
     margin-top: 4em;
+    text-align: center;
 }
 #overview{
     display: none;
@@ -126,6 +127,7 @@ table,th,td {
 #compare{
     display:none;
     margin-top: 4em;
+    text-align: center;
 }
 
 footer {
@@ -174,8 +176,8 @@ nav ul li a {
     font-weight: 600;
 }
 
-.active {
-	border-bottom: 2px solid rgba(61, 77, 170, 0.904);
+nav ul li a:hover{
+    color: mediumslateblue;
 }
 
 #nav:checked+.nav-btn {
@@ -212,6 +214,7 @@ nav ul li a {
 .hidden {
     display: none;
 }
+
 /* -----------------End of navigation----------------------*/
 
 @media screen and (orientation:portrait){
