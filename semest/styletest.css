@@ -114,31 +114,31 @@ table,th,td {
 } */
 
 #introduction{
-    margin-top: 4em;
+    margin-top: 1em;
 }
 #details{
     display: none;
-    margin-top: 4em;
+    margin-top: 1em;
     text-align: center;
 }
 #overview{
     display: none;
-    margin-top: 4em;
+    margin-top: 1em;
+    text-align: center;
 }
 #compare{
     display:none;
-    margin-top: 4em;
+    margin-top: 1em;
     text-align: center;
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 2rem;
-	padding: 0;
-	margin: 0;
-	text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-top: 1em;
+    width: 100%;
+    text-align: center;
 }
 
 
