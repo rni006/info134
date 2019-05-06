@@ -52,7 +52,24 @@ function Database(url, callback){
     //console.log(dic);
     return dic;
   }
-
+  this.education=function(){
+    let dic={};
+    for (var variable in this.elementer){
+      var sub_dic={};
+      var s
+      var name=variable
+      var id=this.data.elementer[variable].kommunenummer;
+      sub_dic["name"]=name;
+      sub_dic["01"]=this.data.elementer[variable]["01"];
+      sub_dic["02a"]=this.data.elementer[variable]["02a"];
+      sub_dic["11"]=this.data.elementer[variable]["11"];
+      sub_dic["03a"]=this.data.elementer[variable]["03a"];
+      sub_dic["04a"]=this.data.elementer[variable]["04a"];
+      sub_dic["09a"]=this.data.elementer[variable]["09a"];
+      dic[id]=sub_dic;
+    }
+    return dic;
+  }
   this.load = function(){startProgram(this.url, this, this.onload)}
   this.onload = null || callback
 }
@@ -76,38 +93,66 @@ var befolkning_d = new Database(befolkning,function (){
   //console(info_dic["0101"][men]["2018"])
   document.getElementById("oversikt").innerHTML=txt;
 })
-
 befolkning_d.load()
 
-
+befolkning_d.load()
 var sysselsatte_d = new Database(sysselsatte,function(){
   var dic=sysselsatte_d.employment();
 })
-
 sysselsatte_d.load()
-var utdanning_d = new Database(utdanning_d)
+var utdanning_d=new Database(utdanning,function(){
+  var list=utdanning_d.education();
 
+})
+utdanning_d.load()
+
+
+/****var befolk=new Database(befolkning, function(){
+  var info=befolk.getInfo();
+  var from=2007;
+  var to=2018;
+  var n= to-from;
+  var number="0101";
+  var txt=" <tr><th>item</th>";
+  for(var i=0; i<n+1; i++){
+    var year = from+i;
+    txt=txt+"<th>"+ year+"</th>"
+  }
+  txt=txt+"<tr><td>men</td>"
+  for (var i=0; i<n+1; i++){
+    var year=from+i;
+    txt=txt+"<td>"+info[number]["men"][year]+"</td>";
+  }
+  txt=txt+"</tr><tr><td>women</td>";
+  for (var i=0; i<n+1; i++){
+    txt=txt+"<td>"+info[number]["women"][from+i]+"</td>";
+  }
+  txt=txt+"</tr>";
+  document.getElementById("befolkning").innerHTML=txt;
+});
+befolk.load()****/
 function detailFunction(){
   var komnum = befolkning_d.getIds();
   var komumID = document.getElementById("kom_numID").value;
-  var moreInfo = befolkning_d.getInfo();
-
+  var workInfo=sysselsatte_d.employment();
+  var befolkInfo = befolkning_d.getInfo();
+  var eduInfo= utdanning_d.education();
+  var befolk=befolkInfo[komumID]["men"]["2017"]+befolkInfo["0101"]["women"]["2017"];
   komumID = komumID.padStart(4, '0');
 
   if(komnum.includes(komumID)){
-    alert('code is valid');
+    //alert('code is valid');
     // go thorugh all the information of the array, compare the kommune nummer to the actual kommune
     // and print out the information in a form of a table
-    for(var i =0; i<befolkning_d.getInfo().length; i++ ){
-      
+    document.getElementById("d_overview").innerHTML=befolk;
+
     }
-    
-  }else {
+
+  else {
     alert('Kommunenummer eksisterer ikke, vennligst - prøv igjen')
   }
-  
-}
 
+}
 
 
 function startProgram(url, obj, callback) {
@@ -125,5 +170,3 @@ function startProgram(url, obj, callback) {
     };
     xhr.send();
 }
-
-//window.onload=main2;
