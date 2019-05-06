@@ -92,6 +92,8 @@ function detailFunction(){
   var komumID = document.getElementById("kom_numID").value;
   var moreInfo = befolkning_d.getInfo();
 
+  komumID = komumID.padStart(4, '0');
+
   if(komnum.includes(komumID)){
     alert('code is valid');
     // go thorugh all the information of the array, compare the kommune nummer to the actual kommune
