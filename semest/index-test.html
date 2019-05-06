@@ -34,11 +34,11 @@
                 <p class="mid">På siden "Detaljer", du kan selv velge en kommune, som du har lyst
                     å vite mer om. Der finner du også inforamsjon om sist målte statistikk for
                     sysselsetting og høyere utdanning. </p>
-                <p class="mid">"Sammenligning" gir deg mulighet for å sammenligne 2 kommuner 
-                    med hverandre. Du får sett historisk data for utviklingen av sysselsetting for 
+                <p class="mid">"Sammenligning" gir deg mulighet for å sammenligne 2 kommuner
+                    med hverandre. Du får sett historisk data for utviklingen av sysselsetting for
                     begge kjønn i begge kommunene.
                 </p>
-        
+
                 <p class="mid">Denne siden benytter data tatt fra <a href="https://www.ssb.no/">Statistisk sentralbyrå</a></p>
                 <ul id="used-data">
                     <p class="mid">De dataene som blir brukt i oppgaven finner du her:</p>
@@ -46,25 +46,25 @@
                     <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsetting</a></li>
                     <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdanning</a></li>
                 </ul>
-        
+
                 <p class="mid" id="warning">OBS: Data kan inneholde feil</p>
             </div>
-        
-            <div id="overview" style="display: none;">
+
+            <div id="overview" class="center" style="display: none;">
                 <h1>Oversikt</h1>
                 <p>Her får du oversikt over alle kommunene, kommunenummer og siste måling av total befolkning</p>
-        
+
                 <div class="head">
                     <div class="number">Kommunenummer</div>
                     <div class="name">Kommunenavn</div>
                     <div class="total">Befolkning</div>
                 </div>
-        
+
                 <div class="table">
                 <table id="oversikt" align="center"></table>
                 </div>
             </div>
-        
+
             <div id="details" style="display: none;">
                 <h1>Detaljer</h1>
                 <form>
@@ -103,20 +103,20 @@
                             </select>
                 </form> -->
             </div>
-        
+
             <div id="compare" style="display: none;">
                 <h1>Sammenligning</h1>
                 <p class="mid">Sammenlign med en annen kommune</p>
                 <input type="text" id="com_number">
                 <input type="text" id="com_number2">
-        
+
                 <button class="submitt" onclick="startProgram()">submitt</button>
-                
+
             </div>
-        
+
 
         </div>
-        
+
 <footer>Dette er en oppgavebesvarelse i emnet INFO134</footer>
 </body>
 

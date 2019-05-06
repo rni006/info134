@@ -8,45 +8,46 @@ body{
 }
 
 *{
+    margin:0px;
     padding:0px;
-}
+  }
 
-p{
-    text-align: center;
-}
+#overview {
+    width:500px;
+    margin:10px auto;
+  }
 
-table,th,td {
+#overview table,th,td {
     border : 1px solid black;
     border-collapse: collapse;
-    text-align: center;
   }
- td{
+#overview td{
     width:160px;
-    text-align: center;
   }
 
-.head .number,.name,.total{
-    display: table-cell;
+#overview .head .number,.name,.total{
+    float:left;
     border: 1px solid black;
     width:160px;
     height:20px;
     text-align: center;;
     border-collapse: collapse;
   }
-.head .number,.name{
+
+#overview .head .number,.name{
     border-right:none;
-    margin-left: auto;
-    margin-right: auto;
   }
 
-.table{
+#overview .table{
     clear:both;
-    height:363px;
+    height:400px;
     overflow:scroll;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+p{
+    text-align: center;
+}
+
 
 h1{
     text-align: center;
