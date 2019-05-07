@@ -131,6 +131,7 @@ utdanning_d.load()
   document.getElementById("befolkning").innerHTML=txt;
 });
 befolk.load()****/
+
 function detailFunction(){
   var komnum = befolkning_d.getIds();
   var komumID = document.getElementById("kom_numID").value;
@@ -150,6 +151,29 @@ function detailFunction(){
 
   else {
     alert('Kommunenummer eksisterer ikke, vennligst - prøv igjen')
+  }
+
+}
+
+function compareFunction(){
+  var komNum = befolkning_d.getIds()
+  var komNumId = document.getElementById("com_number").value;
+  var komNumId2 = document.getElementById("com_number2").value;
+  var popuInfo = befolkning_d.getInfo();
+  var tabell = "";
+
+  if(komNum.includes(komNumId) && komNum.includes(komNumId2)){
+    alert('ya boi')
+
+    // how many people in each of the entered regions (both woman and man together)
+    var population=popuInfo[komNumId]["men"]["2017"]+popuInfo[komNumId]["women"]["2017"];
+    var population2=popuInfo[komNumId2]["men"]["2017"]+popuInfo[komNumId2]["women"]["2017"];
+
+    console.log(population)
+    console.log(population2)
+  }
+  else {
+    alert('Kommunenummer var ikke fylt inn eller eksisterer ikke, vennligst - prøv igjen')
   }
 
 }
