@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" media="screen" href="styletest.css">
     <script src="nav.js"></script>
-    <script src="try.js"></script>
+    <script src="try2.js"></script>
 </head>
 
 <body>
@@ -70,7 +70,7 @@
                 <form>
                         Kommunenummer: <input type="text" id="kom_numID"> <br>
                         <button class="submitt" onclick="detailFunction()">OK</button>
-                </form> 
+                </form>
                 <form style="display: none;">
                         <button class="history" onclick="historyFunction()">Vis Historien</button>
                 </form>
@@ -82,8 +82,9 @@
                 <input type="text" id="com_number">
                 <input type="text" id="com_number2">
 
-                <button class="submitt" onclick="startProgram()">submitt</button>
-
+                <button class="submitt" onclick="compareFunction()">submitt</button>
+                <div id="result">
+                </div>
             </div>
 
 

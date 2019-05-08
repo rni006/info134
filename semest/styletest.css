@@ -216,6 +216,10 @@ nav ul li a:hover{
     display: none;
 }
 
+.red {
+    color: red;
+}
+
 /* -----------------End of navigation----------------------*/
 
 @media screen and (orientation:portrait){
