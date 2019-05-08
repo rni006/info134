@@ -156,60 +156,83 @@ function detailFunction(){
 }
 
 function compareFunction(){
-  var komNum = befolkning_d.getIds();
+  var komNum = sysselsatte_d.getIds();
   var komNumId = document.getElementById("com_number").value;
   var komNumId2 = document.getElementById("com_number2").value;
-  var popuInfo = befolkning_d.getInfo();
-
+  var popuInfo = sysselsatte_d.getInfo();
 
   if(komNum.includes(komNumId) && komNum.includes(komNumId2)){
 
     let kom1 = popuInfo[komNumId];
     let kom2 = popuInfo[komNumId2];
 
-    var kom1Total = {}
-    var kom2Total = {}
+    var kom1Man = {}
+    var kom1Woman = {}
+    var kom2Man = {}
+    var kom2Woman = {}
 
-      Object.entries(kom1.men).forEach(
-        ([key, value]) => kom1Total[key] = value
-      );
+    Object.entries(kom1.men).forEach(
+      ([key, value]) => kom1Man[key] = value
+    );
 
     Object.entries(kom1.women).forEach(
-      ([key, value]) => kom1Total[key] += value
+      ([key, value]) => kom1Woman[key] = value
     );
 
     Object.entries(kom2.men).forEach(
-      ([key, value]) => kom2Total[key] = value
+      ([key, value]) => kom2Man[key] = value
     );
 
     Object.entries(kom2.women).forEach(
-      ([key, value]) => kom2Total[key] += value
+      ([key, value]) => kom2Woman[key] = value
     );
 
     var table = document.getElementById("result");
     table.innerHTML = "dank memes"
 
-    var content = "<table><tr><th>Årstall</th><th>"+ kom1.name +" befolkning</th><th>" + kom2.name + " befolkning</th></tr>";
+    var content = "<table><tr><th>Årstall</th><th>"+ kom1.name+" sysselsetting for men </th><th>" + kom2.name + " sysselsetting for men</th></tr>";
     
-    Object.entries(kom1Total).forEach(
-      ([key, value]) => {
-        let kom1value = "<td>"+value+"</td>";
-        let kom2value = "<td>"+kom2Total[key]+"</td>";
+    Object.entries(kom1Man).forEach(
+       ([key, value]) => {
+         let kom1value = "<td>"+value+"%</td>";
+         let kom2value = "<td>"+kom2Man[key]+"%</td>";
 
-        if(value > kom2Total[key]){
-          kom1value = "<td class='red'>"+value+"</td>";
-        } else {
-          kom2value = "<td class='red'>"+kom2Total[key]+"</td>";
-        }
+         if(value > kom2Man[key]){
+           kom1value = "<td class='red'>"+value+"%</td>";
+         } else {
+           kom2value = "<td class='red'>"+kom2Man[key]+"%</td>";
+         }
 
-        content += "<tr><td>"+key+"</td>"+kom1value+kom2value+"</tr>"
-      }
+         content += "<tr><td>"+key+"</td>"+kom1value+kom2value+"</tr>"
+       }
     );
 
     content += "</table>";
 
-    table.innerHTML = content
+    var table2 = document.getElementById("result2");
+    table2.innerHTML = "dank meme"
 
+    var content2 = "<table><tr><th>Årstall</th><th>"+ kom1.name+" sysselsetting for kvinner </th><th>" + kom2.name + " sysselsetting for kvinner</th></tr>";
+
+    Object.entries(kom1Woman).forEach(
+      ([key, value]) => {
+        let kom1valueWo = "<td>"+value+"%</td>";
+        let kom2valueWo = "<td>"+kom2Woman[key]+"%</td>";
+
+        if(value > kom2Woman[key]){
+          kom1valueWo = "<td class='red'>"+value+"%</td>";
+        } else {
+          kom2valueWo = "<td class='red'>"+kom2Woman[key]+"%</td>";
+        }
+
+        content2 += "<tr><td>"+key+"</td>" +kom1valueWo+kom2valueWo+"</tr>"
+      }
+   );
+
+    content2 +="</table>";
+
+    table.innerHTML = content
+    table2.innerHTML = content2
 
     // how many people in each of the entered regions (both woman and man together)
 
@@ -217,6 +240,8 @@ function compareFunction(){
   else {
     alert('Kommunenummer var ikke fylt inn eller eksisterer ikke, vennligst - prøv igjen')
   }
+
+ 
 
 }
 

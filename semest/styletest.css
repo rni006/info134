@@ -44,6 +44,22 @@ body{
     overflow:scroll;
 }
 
+#result {
+	text-align: center;
+	width: 30%;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+#result2 {
+	text-align: center;
+	width: 30%;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
 p{
     text-align: center;
 }
@@ -83,36 +99,6 @@ a :hover{
     padding: 10px;
 }
 
-/* *{
-    margin:0px;
-    padding:0px;
-  }
-
-table,th,td {
-    border : 1px solid black;
-    border-collapse: collapse;
-  }
- td{
-    width:160px;
-  }
-.head .number .name .total{
-    float:left;
-    border: 1px solid black;
-    width:160px;
-    height:20px;
-    text-align: center;;
-    border-collapse: collapse;
-  }
-.head .number .name{
-    border-right:none;
-  }
-
-.table{
-    clear:both;
-    height:200px;
-    overflow:scroll;
-} */
-
 #introduction{
     margin-top: 1em;
 }
@@ -139,8 +125,8 @@ footer {
     margin-top: 1em;
     width: 100%;
     text-align: center;
+    background: white;
 }
-
 
 /* ------------------------Navigation----------------------*/
 
