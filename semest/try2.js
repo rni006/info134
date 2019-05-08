@@ -131,6 +131,7 @@ utdanning_d.load()
   document.getElementById("befolkning").innerHTML=txt;
 });
 befolk.load()****/
+
 function detailFunction(){
   var komnum = befolkning_d.getIds();
   var komumID = document.getElementById("kom_numID").value;
@@ -150,6 +151,71 @@ function detailFunction(){
 
   else {
     alert('Kommunenummer eksisterer ikke, vennligst - prøv igjen')
+  }
+
+}
+
+function compareFunction(){
+  var komNum = befolkning_d.getIds();
+  var komNumId = document.getElementById("com_number").value;
+  var komNumId2 = document.getElementById("com_number2").value;
+  var popuInfo = befolkning_d.getInfo();
+
+
+  if(komNum.includes(komNumId) && komNum.includes(komNumId2)){
+
+    let kom1 = popuInfo[komNumId];
+    let kom2 = popuInfo[komNumId2];
+
+    var kom1Total = {}
+    var kom2Total = {}
+
+      Object.entries(kom1.men).forEach(
+        ([key, value]) => kom1Total[key] = value
+      );
+
+    Object.entries(kom1.women).forEach(
+      ([key, value]) => kom1Total[key] += value
+    );
+
+    Object.entries(kom2.men).forEach(
+      ([key, value]) => kom2Total[key] = value
+    );
+
+    Object.entries(kom2.women).forEach(
+      ([key, value]) => kom2Total[key] += value
+    );
+
+    var table = document.getElementById("result");
+    table.innerHTML = "dank memes"
+
+    var content = "<table><tr><th>Årstall</th><th>"+ kom1.name +" befolkning</th><th>" + kom2.name + " befolkning</th></tr>";
+    
+    Object.entries(kom1Total).forEach(
+      ([key, value]) => {
+        let kom1value = "<td>"+value+"</td>";
+        let kom2value = "<td>"+kom2Total[key]+"</td>";
+
+        if(value > kom2Total[key]){
+          kom1value = "<td class='red'>"+value+"</td>";
+        } else {
+          kom2value = "<td class='red'>"+kom2Total[key]+"</td>";
+        }
+
+        content += "<tr><td>"+key+"</td>"+kom1value+kom2value+"</tr>"
+      }
+    );
+
+    content += "</table>";
+
+    table.innerHTML = content
+
+
+    // how many people in each of the entered regions (both woman and man together)
+
+  }
+  else {
+    alert('Kommunenummer var ikke fylt inn eller eksisterer ikke, vennligst - prøv igjen')
   }
 
 }
