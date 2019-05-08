@@ -308,3 +308,13 @@ nav ul li a:hover{
     }
 
 }
+
+
+#com_num,#com_edu,#com_popu,#com_work,#com_name{
+      float:left;
+      border: 1px solid black;
+      width:160px;
+      height:20px;
+      text-align: center;;
+      border-collapse: collapse;
+}
