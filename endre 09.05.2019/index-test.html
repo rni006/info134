@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" type="text/css" media="screen" href="styletest.css">
     <script src="nav.js"></script>
@@ -7,125 +8,125 @@
 </head>
 
 <body>
-<nav>
+    <nav>
         <input type="checkbox" id="nav" class="hidden">
         <label for="nav" class="nav-btn">
-              <i></i>
-              <i></i>
-              <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
         </label>
 
-<div class="nav">
-    <ul>
-    <li><a href="#" onclick="toggleVisibility('introduction');">Introduksjon</a></li>
-    <li onclick="befolkning_d.load()"> <a href="#" onclick="toggleVisibility('overview');">Oversikt</a></li>
-    <li><a href="#" onclick="toggleVisibility('details');">Detaljer</a></li>
-    <li><a href="#" onclick="toggleVisibility('compare');">Sammenligning</a></li>
-    </ul>
-</div>
-</nav>
+        <div class="nav">
+            <ul>
+                <li><a href="#" onclick="toggleVisibility('introduction');">Introduksjon</a></li>
+                <li onclick="befolkning_d.load()"> <a href="#" onclick="toggleVisibility('overview');">Oversikt</a></li>
+                <li><a href="#" onclick="toggleVisibility('details');">Detaljer</a></li>
+                <li><a href="#" onclick="toggleVisibility('compare');">Sammenligning</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<div class="container">
+    <div class="container">
         <div id="introduction">
-                <h1>Folk</h1>
-                <p class="mid">På denne siden kan du finne mer informasjon on Norges befolking.</p>
-                <p class="mid">På siden "Oversikt" finner du alle kommuner med kommunenummer og siste målingen
-                    av total befolkningen.</p>
-                <p class="mid">På siden "Detaljer", du kan selv velge en kommune, som du har lyst
-                    å vite mer om. Der finner du også inforamsjon om sist målte statistikk for
-                    sysselsetting og høyere utdanning. </p>
-                <p class="mid">"Sammenligning" gir deg mulighet for å sammenligne 2 kommuner
-                    med hverandre. Du får sett historisk data for utviklingen av sysselsetting for
-                    begge kjønn i begge kommunene.
-                </p>
+            <h1>Folk</h1>
+            <p class="mid">På denne siden kan du finne mer informasjon on Norges befolking.</p>
+            <p class="mid">På siden "Oversikt" finner du alle kommuner med kommunenummer og siste målingen
+                av total befolkningen.</p>
+            <p class="mid">På siden "Detaljer", du kan selv velge en kommune, som du har lyst
+                å vite mer om. Der finner du også inforamsjon om sist målte statistikk for
+                sysselsetting og høyere utdanning. </p>
+            <p class="mid">"Sammenligning" gir deg mulighet for å sammenligne 2 kommuner
+                med hverandre. Du får sett historisk data for utviklingen av sysselsetting for
+                begge kjønn i begge kommunene.
+            </p>
 
-                <p class="mid">Denne siden benytter data tatt fra <a href="https://www.ssb.no/">Statistisk sentralbyrå</a></p>
-                <ul id="used-data">
-                    <p class="mid">De dataene som blir brukt i oppgaven finner du her:</p>
-                    <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning</a></li>
-                    <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsetting</a></li>
-                    <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdanning</a></li>
-                </ul>
+            <p class="mid">Denne siden benytter data tatt fra <a href="https://www.ssb.no/">Statistisk sentralbyrå</a>
+            </p>
+            <ul id="used-data">
+                <p class="mid">De dataene som blir brukt i oppgaven finner du her:</p>
+                <li><a href="http://data.ssb.no/api/v0/dataset/104857?lang=no">Befolkning</a></li>
+                <li><a href="http://data.ssb.no/api/v0/dataset/100145?lang=no">Sysselsetting</a></li>
+                <li><a href="http://data.ssb.no/api/v0/dataset/85432?lang=no">Utdanning</a></li>
+            </ul>
 
-                <p class="mid" id="warning">OBS: Data kan inneholde feil</p>
+            <p class="mid" id="warning">OBS: Data kan inneholde feil</p>
+        </div>
+
+        <div id="overview" class="center" style="display: none;">
+            <h1>Oversikt</h1>
+            <p>Her får du oversikt over alle kommunene, kommunenummer og siste måling av total befolkning.</p>
+
+            <div class="head">
+                <div class="number">Kommunenummer</div>
+                <div class="name">Kommunenavn</div>
+                <div class="total">Befolkning</div>
             </div>
 
-            <div id="overview" class="center" style="display: none;">
-                <h1>Oversikt</h1>
-                <p>Her får du oversikt over alle kommunene, kommunenummer og siste måling av total befolkning</p>
-
-                <div class="head">
-                    <div class="number">Kommunenummer</div>
-                    <div class="name">Kommunenavn</div>
-                    <div class="total">Befolkning</div>
-                </div>
-
-                <div class="table">
+            <div class="table">
                 <table id="oversikt" align="center"></table>
+            </div>
+        </div>
+
+    <div id="details">
+        <h1>Detaljer</h1>
+        <p>Her kan du søke på en kommune som du har lyst å se mer informasjon om.</p>
+        <form>
+            Skriv inn riktig kommunenummer: <input type="text" id="kom_numID" placeholder="Kommunenummer">
+            <button class="submitt" onclick="detailFunction()">OK</button>
+        </form>
+
+        <div id="display" style="display:none">
+            <p class="font">Oversikt over siste målinger</p>
+            <table id="table_overview"></table>
+            <p>Klikk her for å se <button onclick="history()">Historisk Utvikling</button></p>
+            <div id="develop" style="clear:both; margin:10px; display:none;">
+                <h1>Historisk utvikling</h1>
+
+                <div class="d_population">
+                    <h2>Befolkning</h2>
+                    <table class="responsive" id="his_popu"> </table>
                 </div>
-            </div>
 
-            <div id="details" >
-                <h1>Detaljer</h1>
-                <form>
-                        Kommunenummer: <input type="text" id="kom_numID"> <br>
-                        <button class="submitt" onclick="detailFunction()">OK</button>
-                </form>
-
-                <div id="display" style="display:none">
-                <p class="font" style="font-size:30px;">Overview til siste målinger</p>
-                <table id="table_overview"></table>
-                  Klikk her for å se <button onclick="history()"> history </button>
-                  <div id="develop" style="clear:both; margin:10px; display:none;">
-                    <p class="font" style="font-size:30px;" "history()">Historisk utviklingen</p>
-
-                    <div class="d_population">
-                    <span class="font">Befolkning</span>
-                    <table id="his_popu" > </table>
-                    </div>
-
-                    <div class="d_work">
-                    <span class="font" > Sysselsetting</span>
-                    <table id="his_work"></table>
-                    </div>
-
-                    <div class="d_education">
-                    <span class="font" style="text-align:left;clear:both">Utdaning </span>
-                    <div class="edu_men" >
-                    <span class="font" >Utdaning for menn</span>
-                    <table id="his_edu_men"></table>
-                    </div>
-
-                    <div class="edu_women" >
-                    <span class="font" >Utdaning for kvinner</span>
-                    <table id="his_edu_women"></table>
-                    </div>
-
-                    </div>
-
-                  </div>
-
-              </div>
-
-            </div>
-
-
-            <div id="compare" style="display: none;">
-                <h1>Sammenligning</h1>
-                <p class="mid">Sammenlign med en annen kommune</p>
-                <input type="text" id="com_number">
-                <input type="text" id="com_number2">
-
-                <button class="submitt" onclick="compareFunction()">submit</button>
-                <div id="result">
+                <div class="d_work">
+                    <h2>Sysselsetting</h2>
+                    <table class="responsive" id="his_work"></table>
                 </div>
-                <div id="result2"></div>
-            </div>
 
+                <div class="d_education">
+                    <div class="edu_men">
+                        <h2>Utdaning for menn</h2>
+                        <table class="responsive" id="his_edu_men"></table>
+                    </div>
+
+                    <div class="edu_women">
+                        <h2>Utdaning for kvinner</h2>
+                        <table class="responsive" id="his_edu_women"></table>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
-<footer>Dette er en oppgavebesvarelse i emnet INFO134</footer>
+    </div>
+
+
+        <div id="compare" style="display: none;">
+            <h1>Sammenligning</h1>
+            <p class="mid">Her kan du sammenligne veksten i sysselsetting mellom to forskjellige kommuner.</p>
+            <p class="mid">Den som er marker i rød, har den høyeste vekst i sysselsetting.</p>
+            <input type="text" id="com_number" placeholder="Kommunenummer 1">
+            <input type="text" id="com_number2" placeholder="Kommunenummer 2">
+
+            <button class="submitt" onclick="compareFunction()">OK</button>
+            <div id="result">
+            </div>
+            <div id="result2"></div>
+        </div>
+
+    </div>
+
+    <footer>Dette er en oppgavebesvarelse i emnet INFO134</footer>
 </body>
 
 </html>
