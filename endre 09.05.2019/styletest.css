@@ -1,0 +1,356 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+  }
+
+#overview {
+    width:500px;
+    margin:10px auto;
+  }
+
+#overview table,th,td {
+    border : 1px solid black;
+    border-collapse: collapse;
+  }
+#overview td{
+    width:160px;
+  }
+
+#overview .head .number,.name,.total{
+    float:left;
+    border: 1px solid black;
+    width:160px;
+    height:20px;
+    text-align: center;;
+    border-collapse: collapse;
+  }
+
+#overview .head .number,.name{
+    border-right:none;
+  }
+
+#overview .table{
+    clear:both;
+    height:400px;
+    overflow:scroll;
+}
+
+#result {
+	text-align: center;
+	width: 30%;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+}
+#result2 {
+	text-align: center;
+	width: 30%;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+p{
+    text-align: center;
+}
+
+
+h1{
+    text-align: center;
+}
+
+a{
+    color:cornflowerblue;
+    text-decoration: none;
+}
+a :hover{
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+}
+
+#warning{
+    font-weight: bold;
+    text-align: center;
+}
+
+#used-data{
+    text-align: center;
+}
+
+.container{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.mid{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#introduction{
+    margin-top: 1em;
+}
+#details{
+    display: none;
+    margin: auto;
+    width:1400px;
+}
+#details .d_population,.d_work,.d_education{
+  float:left;
+  width:1000px;
+}
+
+#details #d_overview #table_overview{
+    border-collapse: collapse;
+    width:700px;
+    text-align:center;
+  }
+
+
+
+#details #develop #his_popu,#his_edu,#his_work{
+  border:1px solid black;
+  height: 200px;
+  width: 1000px;
+  border-collapse: collapse;
+  margin:10px;
+  text-align: center;
+  margin:40px;
+}
+#details .font{
+  text-align: left;
+  font-family:"Arial Black", Gadget, sans-serif;
+}
+#details #his_edu_men,#his_edu_women{
+  border-collapse: collapse;
+  width:700px;
+  text-align: center;
+}
+#details .edu_men, .edu_women{
+  height: 800px;
+  float:left;
+  margin:20px;
+}
+#overview{
+    display: none;
+    margin-top: 1em;
+    text-align: center;
+}
+#compare{
+    display:none;
+    margin-top: 1em;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-top: 1em;
+    width: 100%;
+    text-align: center;
+    background: white;
+}
+
+/* ------------------------Navigation----------------------*/
+
+nav {
+    padding: 8px;
+}
+
+nav ul {
+    float: right;
+    padding: 1%;
+}
+
+nav ul li {
+    display: inline-block;
+    /* margin-bottom: 1em; */
+}
+
+nav ul li:not(:first-child) {
+    margin-left: 48px;
+}
+
+nav ul li:last-child {
+    margin-right: 24px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+nav ul li a:hover{
+    color: mediumslateblue;
+}
+
+#nav:checked+.nav-btn {
+    transform: rotate(45deg);
+}
+
+#nav:checked+.nav-btn i {
+    background: #000;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked+.nav-btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked+.nav-btn i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked+.nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked~.nav {
+    z-index: 9990;
+    opacity: 1;
+}
+
+#nav:checked~.nav ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+.red {
+    color: red;
+}
+
+/* -----------------End of navigation----------------------*/
+
+@media screen and (orientation:portrait){
+
+    .mid{
+        margin: auto;
+        width: 90%;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #fff;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    .nav ul {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+    .nav ul li {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 1em;
+    }
+
+    .nav ul li:nth-child(1) a {
+        transition-delay: 0.2s;
+    }
+
+    .nav ul li:nth-child(2) a {
+        transition-delay: 0.3s;
+    }
+
+    .nav ul li:nth-child(3) a {
+        transition-delay: 0.4s;
+    }
+
+    .nav ul li:nth-child(4) a {
+        transition-delay: 0.5s;
+    }
+
+    .nav ul li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    .nav ul li a {
+        padding: 10px 24px;
+        opacity: 0;
+        color: #000;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        transform: translateX(-20px);
+        transition: all 0.2s ease;
+    }
+
+    .nav-btn {
+        position: fixed;
+        right: 10px;
+        top: 14px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
+    }
+
+    .nav-btn i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #000;
+        border-radius: 2px;
+        margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+        margin-top: 16px;
+    }
+
+    .nav-btn i:nth-child(2) {
+        margin-top: 4px;
+        opacity: 1;
+    }
+
+    .nav-btn i:nth-child(3) {
+        margin-top: 4px;
+    }
+
+}
+
+
+#com_num,#com_edu,#com_popu,#com_work,#com_name{
+      float:left;
+      border: 1px solid black;
+      width:160px;
+      height:20px;
+      text-align: center;;
+      border-collapse: collapse;
+}
