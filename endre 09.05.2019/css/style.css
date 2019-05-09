@@ -10,7 +10,52 @@ body{
 *{
     margin:0px;
     padding:0px;
-  }
+}
+
+p{
+    text-align: center;
+    margin:1em;
+}
+
+h1{
+    text-align: center;
+    margin: 1em;
+}
+
+h2{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+a{
+    color:cornflowerblue;
+    text-decoration: none;
+}
+a :hover{
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+}
+
+table { 
+    border-collapse: collapse; 
+}
+  
+tr:nth-of-type(odd) { 
+    background: #eee; 
+}
+
+th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+}
+
+td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: center; 
+}
 
 #overview {
     width:500px;
@@ -60,23 +105,6 @@ body{
     margin-bottom: 2em;
 }
 
-p{
-    text-align: center;
-}
-
-
-h1{
-    text-align: center;
-}
-
-a{
-    color:cornflowerblue;
-    text-decoration: none;
-}
-a :hover{
-    text-decoration: underline;
-    text-decoration-color: cornflowerblue;
-}
 
 #warning{
     font-weight: bold;
@@ -102,47 +130,65 @@ a :hover{
 #introduction{
     margin-top: 1em;
 }
+
 #details{
     display: none;
-    margin: auto;
-    width:1400px;
+    margin-top: 1em;
+    text-align: center;
 }
-#details .d_population,.d_work,.d_education{
-  float:left;
-  width:1000px;
+
+form {
+	margin: 2em;
 }
+
 
 #details #d_overview #table_overview{
     border-collapse: collapse;
     width:700px;
     text-align:center;
-  }
+}
 
+#details #develop #his_popu, #his_edu, #his_work {
+	border: 1px solid black;
+	height: 171px;
+	border-collapse: collapse;
+	text-align: center;
+	margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.submitt {
+	height: 30px;
+	width: 30px;
+	color: black;
+	background: white;
+}
 
-#details #develop #his_popu,#his_edu,#his_work{
-  border:1px solid black;
-  height: 200px;
-  width: 1000px;
-  border-collapse: collapse;
-  margin:10px;
+#table_overview {
+    border-collapse: collapse;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.font{
   text-align: center;
-  margin:40px;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 100;
 }
-#details .font{
-  text-align: left;
-  font-family:"Arial Black", Gadget, sans-serif;
+
+#details #his_edu_men, #his_edu_women {
+	border-collapse: collapse;
+	width: 585px;
+	text-align: center;
+	margin-bottom: 4em;
+	margin-left: auto;
+	margin-right: auto;
 }
-#details #his_edu_men,#his_edu_women{
-  border-collapse: collapse;
-  width:700px;
-  text-align: center;
-}
-#details .edu_men, .edu_women{
-  height: 800px;
-  float:left;
-  margin:20px;
-}
+
 #overview{
     display: none;
     margin-top: 1em;
@@ -342,7 +388,6 @@ nav ul li a:hover{
     .nav-btn i:nth-child(3) {
         margin-top: 4px;
     }
-
 }
 
 
