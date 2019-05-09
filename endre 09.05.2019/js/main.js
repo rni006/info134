@@ -253,43 +253,67 @@ function compareFunction() {
 
     var content = "<table><tr><th>Årstall</th><th>" + kom1.name + " sysselsetting for men </th><th>" + kom2.name + " sysselsetting for men</th></tr>";
 
+    //big display for loop
     Object.entries(kom1Man).forEach(
       ([key, value]) => {
-        let kom1value = "<td>" + value + "%</td>";
-        let kom2value = "<td>" + kom2Man[key] + "%</td>";
-
-        if (value > kom2Man[key]) {
-          kom1value = "<td class='red'>" + value + "%</td>";
-        } else {
-          kom2value = "<td class='red'>" + kom2Man[key] + "%</td>";
+    
+        let kom1value = 0;
+        let kom2value = 0;
+    
+        //if a previous year exists
+        if (kom1Man[key-1] != null){
+          //calculate difference for first coloumn
+          kom1value = Math.round((value - kom1Man[key-1])*10)/10;
+    
+          //calculate difference for second coloumn
+          kom2value = Math.round((kom2Man[key] - kom2Man[key-1])*10)/10;
         }
-
+    
+          
+        if (kom1value > kom2value) {
+          kom1value = "<td class='red'>" + kom1value + "%</td>";
+          kom2value = "<td>" + kom2value + "%</td>";
+        } else {
+          kom2value = "<td class='red'>" + kom2value + "%</td>";
+          kom1value = "<td>" + kom1value + "%</td>";
+        }
+    
         content += "<tr><td>" + key + "</td>" + kom1value + kom2value + "</tr>"
       }
     );
-
+    
     content += "</table>";
-
+    
     var table2 = document.getElementById("result2");
     table2.innerHTML = "dank meme"
-
+    
     var content2 = "<table><tr><th>Årstall</th><th>" + kom1.name + " sysselsetting for kvinner </th><th>" + kom2.name + " sysselsetting for kvinner</th></tr>";
-
+    
     Object.entries(kom1Woman).forEach(
       ([key, value]) => {
-        let kom1valueWo = "<td>" + value + "%</td>";
-        let kom2valueWo = "<td>" + kom2Woman[key] + "%</td>";
-
-
-        if (value > kom2Woman[key]) {
-          kom1valueWo = "<td class='red'>" + value + "%</td>";
-        } else {
-          kom2valueWo = "<td class='red'>" + kom2Woman[key] + "%</td>";
+        let kom1valueWo = 0;
+        let kom2valueWo = 0;
+    
+        //if a previous year exists then 
+        if (kom1Man[key-1] != null){
+          //calculate difference for first coloumn
+          kom1valueWo = Math.round((value - kom1Woman[key-1])*10)/10;
+    
+          //calculate difference for second coloumn
+          kom2valueWo = Math.round((kom2Woman[key] - kom2Woman[key-1])*10)/10;
         }
+       
+        if (kom1valueWo > kom2valueWo) {
+          kom1valueWo = "<td class='red'>" + kom1valueWo + "%</td>";
+          kom2valueWo = "<td>" + kom2valueWo + "%</td>";
+        } else {
+          kom2valueWo = "<td class='red'>" + kom2valueWo + "%</td>";
+          kom1valueWo = "<td>" + kom1valueWo + "%</td>";
+        }
+
         content2 += "<tr><td>" + key + "</td>" + kom1valueWo + kom2valueWo + "</tr>"
       }
     );
-
     content2 += "</table>";
 
     table.innerHTML = content
